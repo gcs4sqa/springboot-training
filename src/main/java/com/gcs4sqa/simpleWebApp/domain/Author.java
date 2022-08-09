@@ -1,6 +1,7 @@
 package com.gcs4sqa.simpleWebApp.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -11,19 +12,18 @@ public class Author {
     private Long id;
     private String firstname;
     private String lastname;
-    @ManyToMany(mappedBy = "Author")
-    private Set<Book> books;
+    @ManyToMany(mappedBy = "authors")
+    private Set<Book> books = new HashSet<>();
 
     public Author() {
     }
 
-    public Author(String firstname, String lastname, Set<Book> books) {
+    public Author(String firstname, String lastname) {
         this.firstname = firstname;
         this.lastname = lastname;
-        this.books = books;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
