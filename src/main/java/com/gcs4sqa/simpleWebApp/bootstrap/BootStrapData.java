@@ -29,6 +29,8 @@ public class BootStrapData implements CommandLineRunner {
         publisher.setName("SFG Publishing");
         publisher.setCity("Orlando");
         publisher.setState("FL");
+        publisher.setAddressLine1("7700 Westgate Bulivade");
+        publisher.setZip("FL12345");
 
         publisherRepository.save(publisher);
 
